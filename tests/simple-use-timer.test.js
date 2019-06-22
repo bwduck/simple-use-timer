@@ -33,24 +33,4 @@ describe("useTimer", () => {
     mount(<Test />);
     expect(check).toBeCalledWith(23);
   });
-
-  it("Ignores startTimer once it has already started", () => {
-    global.Date.now = jest
-      .fn()
-      .mockReturnValueOnce(100)
-      .mockReturnValueOnce(125)
-      .mockReturnValueOnce(175);
-    const check = jest.fn();
-
-    const Test = () => {
-      const [startTimer, getElapsedTime] = useTimer();
-      startTimer();
-      startTimer();
-      check(getElapsedTime());
-      return null;
-    };
-
-    mount(<Test />);
-    expect(check).toBeCalledWith(25);
-  });
 });

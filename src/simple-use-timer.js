@@ -2,13 +2,9 @@ import { useRef } from "react";
 
 const useTimer = () => {
   const timer = useRef(0);
-  const timerStarted = useRef(false);
 
   const startTimer = () => {
-    if (!timerStarted.current) {
-      timer.current = Date.now();
-    }
-    timerStarted.current = true;
+    timer.current = Date.now();
   };
 
   const getElapsedTime = () => Date.now() - timer.current;
