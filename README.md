@@ -2,11 +2,11 @@
 
 `simpleUseTimer` is a bare-bones React Hook that helps time events.  It returns two functions, one which starts the timer, and one that gets the time elapsed since the start.  Calling the start function again will reset the timer.
 
-[![version](https://img.shields.io/npm/v/simple-user-timer.svg)](https://www.npmjs.com/package/simple-user-timer)
-[![minified size](https://img.shields.io/bundlephobia/min/simple-user-timer.svg)](https://www.npmjs.com/package/simple-user-timer)
-[![minzipped size](https://img.shields.io/bundlephobia/minzip/simple-user-timer.svg)](https://www.npmjs.com/package/simple-user-timer)
-[![downloads](https://img.shields.io/npm/dt/simple-user-timer.svg)](https://www.npmjs.com/package/simple-user-timer)
-[![build](https://api.travis-ci.com/CharlesStover/simple-user-timer.svg)](https://travis-ci.com/CharlesStover/simple-user-timer/)
+[![version](https://img.shields.io/npm/v/simple-use-timer.svg)](https://www.npmjs.com/package/simple-use-timer)
+[![minified size](https://img.shields.io/bundlephobia/min/simple-use-timer.svg)](https://www.npmjs.com/package/simple-use-timer)
+[![minzipped size](https://img.shields.io/bundlephobia/minzip/simple-use-timer.svg)](https://www.npmjs.com/package/simple-use-timer)
+[![downloads](https://img.shields.io/npm/dt/simple-use-timer.svg)](https://www.npmjs.com/package/simple-use-timer)
+[![build](https://api.travis-ci.com/CharlesStover/simple-use-timer.svg)](https://travis-ci.com/CharlesStover/simple-use-timer/)
 
 ## Install
 
