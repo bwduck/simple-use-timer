@@ -1,13 +1,13 @@
-import React from 'react';
-import { configure, mount } from 'enzyme';
-import useTimer from '../src/simple-use-timer';
-import Adapter from 'enzyme-adapter-react-16';
+import React from "react";
+import { configure, mount } from "enzyme";
+import useTimer from "../src/simple-use-timer";
+import Adapter from "enzyme-adapter-react-16";
 
 configure({ adapter: new Adapter() });
 
 let realDate;
 
-describe('useTimer', () => {
+describe("useTimer", () => {
   beforeAll(() => {
     realDate = Date.now.bind(global.Date);
   });
@@ -16,7 +16,7 @@ describe('useTimer', () => {
     Date.now = realDate;
   });
 
-  it('Returns the elapsed time', () => {
+  it("Returns the elapsed time", () => {
     global.Date.now = jest
       .fn()
       .mockReturnValueOnce(100)
@@ -32,5 +32,25 @@ describe('useTimer', () => {
 
     mount(<Test />);
     expect(check).toBeCalledWith(23);
+  });
+
+  it("Ignores startTimer once it has already started", () => {
+    global.Date.now = jest
+      .fn()
+      .mockReturnValueOnce(100)
+      .mockReturnValueOnce(125)
+      .mockReturnValueOnce(175);
+    const check = jest.fn();
+
+    const Test = () => {
+      const [startTimer, getElapsedTime] = useTimer();
+      startTimer();
+      startTimer();
+      check(getElapsedTime());
+      return null;
+    };
+
+    mount(<Test />);
+    expect(check).toBeCalledWith(25);
   });
 });
